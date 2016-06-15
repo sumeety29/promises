@@ -2,22 +2,34 @@ var promise = require('bluebird')
 
 function mathsCal(inputParam1, inputParam2){
 
-    return new promise(function(resolve, reject){
+    new promise(function(resolve, reject){
             
-        var result = inputParam1 + inputParam2;
+        var addResult = inputParam1 + inputParam2;
 
-        if(result !== '' && !isNaN(result)){
-            resolve(result)    
+        if(addResult !== '' && !isNaN(addResult)){
+            resolve(addResult)    
         }
         else{
-            reject('something went wrong')
+            reject('something went wrong')  
         }
         
-    }).then(function(result){
-        console.log('Result ',result)
+    }).then(function(addResult){
+        
+        console.log('Add result ',addResult)
+        
+        var subResult = inputParam1 - inputParam2;
+
+        if(subResult !== '' && !isNaN(subResult)){
+             return subResult
+        }
+        else{
+            return 'something went wrong'
+        }
+        
+    }).then(function(subResult){
+        console.log('Sub result ',subResult)
     })
     
 }
 
-mathsCal()
-
+mathsCal(10, 5)
