@@ -32,4 +32,4 @@ function mathsCal(inputParam1, inputParam2){
     
 }
 
-mathsCal(10, 5)
+mathsCal(10, 50)
